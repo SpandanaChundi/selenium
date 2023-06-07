@@ -1,0 +1,37 @@
+package stepdefination;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Login {
+	
+	WebDriver driver;
+	
+	@Given("^User on Ranford Home Page$")
+	public void User_on_Ranford_Home_Page() {
+		
+		driver=new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get("http://103.211.39.246/ranford2");
+		
+		
+	}
+	@When("^User enters valid Username and Password$")
+	public void User_enters_valid_Username_and_Password() {
+		
+		
+	}
+	@Then("^Verifying Admin login validation$")
+	public void Verifying_Admin_login_validation() {
+		
+	}
+	@When("^User clicks on Logout$")
+	public void User_clicks_on_Logout() {
+		
+	}
+
+}

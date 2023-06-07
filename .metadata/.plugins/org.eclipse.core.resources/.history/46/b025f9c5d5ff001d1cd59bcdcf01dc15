@@ -1,0 +1,10 @@
+package com.mvnpackage.scripts;
+
+public class Samplemaven {
+
+	public static void main(String[] args) {
+		WebDriver driver= new FirefoxDriver();
+
+	}
+
+}

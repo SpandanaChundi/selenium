@@ -1,0 +1,50 @@
+package com.banking.keyword;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.streaming.SXSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.banking.master.*;
+public class Keyword {
+
+	public static void main(String[] args) throws IOException {
+		
+		Library Lb=new Library();
+		
+		
+		FileInputStream FIS=new FileInputStream("C:\\Users\\91817\\eclipse-workspace\\Ebanking\\src\\com\\banking\\keyword\\keyword_data.xlsx");
+		
+		XSSFWorkbook wb=new XSSFWorkbook(FIS);
+		
+		XSSFSheet ws=wb.getSheet("TestCase");
+		XSSFSheet ws1=wb.getSheet("TestSteps");
+		
+		int tcrc=ws.getLastRowNum();
+		System.out.println(tcrc);
+		
+		int tsrc=ws1.getLastRowNum();
+		System.out.println(tsrc);
+		
+		for (int i=1; i<=tcrc; i++) {
+			
+			String exe=ws.getRow(i).getCell(2).getStringCellValue();
+			if (exe.equalsIgnoreCase("Y")) {
+				
+				String tcId=ws.getRow(i).getCell(0).getStringCellValue();
+				System.out.println(tcId);
+				
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
+
+	}
+
+}

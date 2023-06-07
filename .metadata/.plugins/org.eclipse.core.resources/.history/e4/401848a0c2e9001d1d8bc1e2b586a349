@@ -1,0 +1,56 @@
+package com.banking.scripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class Basicscript {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver=new FirefoxDriver();
+		
+		driver.manage().window().maximize();
+		driver.get("http://103.211.39.246/ranford2");
+		
+		//Admin login
+		
+		driver.findElement(By.id("txtuId")).sendKeys("Admin");
+		driver.findElement(By.id("txtPword")).sendKeys("Mindq@Systems");
+		driver.findElement(By.xpath("//*[@id=\'login\']")).click();
+		
+		//Branch creation
+		
+		driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/a/img")).click();
+		driver.findElement(By.id("BtnNewBR")).click();
+		driver.findElement(By.id("txtbName")).sendKeys("mqsystem");
+		driver.findElement(By.id("txtAdd1")).sendKeys("SR nagar");
+		driver.findElement(By.id("txtZip")).sendKeys("56789");
+		
+		//drop downs
+		
+		Select Ctry=new Select(driver.findElement(By.id("lst_counrtyU")));
+		Ctry.selectByVisibleText("INDIA");
+		
+		new Select(driver.findElement(By.id("lst_stateI;"))).selectByVisibleText("Delhi");
+		new Select(driver.findElement(By.id("lst_cityI"))).selectByVisibleText("Select");
+		
+		
+		driver.findElement(By.id("btn_insert")).click();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+	}
+	
+}
